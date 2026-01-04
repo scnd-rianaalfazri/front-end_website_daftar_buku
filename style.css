@@ -1,0 +1,292 @@
+/* Reset dan Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: white;
+  max-width: 1200px;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+  margin-bottom: 25px;
+  animation: fadeIn 0.6s ease-in;
+}
+
+header h1 {
+  color: #667eea;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+header h2 {
+  color: #764ba2;
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+header img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+
+/* Main Content */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.5s ease-out;
+}
+
+section h2 {
+  color: #667eea;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #764ba2;
+  padding-bottom: 10px;
+}
+
+/* Form Styles */
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#bookFormSubmit {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+/* Search Form */
+#searchBook {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+#searchBook div {
+  flex: 1;
+  min-width: 200px;
+}
+
+#searchSubmit {
+  margin-bottom: 0;
+}
+
+/* Book Items */
+[data-testid="bookItem"] {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+[data-testid="bookItem"]:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+[data-testid="bookItem"] h3 {
+  color: #667eea;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+[data-testid="bookItem"] p {
+  color: #555;
+  margin: 5px 0;
+  font-size: 0.95em;
+}
+
+[data-testid="bookItem"] div {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+[data-testid="bookItem"] button {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 15px;
+  font-size: 0.9em;
+}
+
+[data-testid="bookItemIsCompleteButton"] {
+  background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
+}
+
+[data-testid="bookItemDeleteButton"] {
+  background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+}
+
+[data-testid="bookItemEditButton"] {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Empty State */
+#incompleteBookList:empty::after,
+#completeBookList:empty::after {
+  content: "Belum ada buku di rak ini";
+  display: block;
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-style: italic;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  header h2 {
+    font-size: 1em;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  section h2 {
+    font-size: 1.5em;
+  }
+
+  #searchBook {
+    flex-direction: column;
+  }
+
+  [data-testid="bookItem"] div {
+    flex-direction: column;
+  }
+
+  [data-testid="bookItem"] button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  section {
+    padding: 15px;
+  }
+}

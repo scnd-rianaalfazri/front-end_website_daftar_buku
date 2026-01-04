@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alfazry Bookshelf App</title>
+
+    <!-- Impor script kamu di sini -->
+    <!-- Lampirkan `defer` jika pemanggilan dilakukan dalam <head> -->
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Alfazry Bookshelf App</h1>
+      <h2>Baca Buku Novel, Disini aja!!!</h2>
+      <img src="https://1.bp.blogspot.com/-a3HdSUWVYSg/XoPtqNnxahI/AAAAAAAAGuM/amZQrP_Xu2IcuLJDd7HlbLCn5V7rnLryQCLcBGAsYHQ/s1600/PicsArt_12-28-10.39.55.jpg" 
+      alt="Kumpulan Buku Novel Bacaan">
+    </header>
+
+    <main>
+      <section>
+        <h2>Tambah Buku Baru</h2>
+        <form id="bookForm" data-testid="bookForm">
+          <div>
+            <label for="bookFormTitle">Judul</label>
+            <input id="bookFormTitle" type="text" required data-testid="bookFormTitleInput" />
+          </div>
+          <div>
+            <label for="bookFormAuthor">Penulis</label>
+            <input id="bookFormAuthor" type="text" required data-testid="bookFormAuthorInput" />
+          </div>
+          <div>
+            <label for="bookFormYear">Tahun</label>
+            <input id="bookFormYear" type="number" required data-testid="bookFormYearInput" />
+          </div>
+          <div>
+            <label for="bookFormPublisher">Penerbit</label>
+            <input id="bookFormPublisher" type="text" required data-testid="bookFormPublisherInput" />
+          </div>
+          <div>
+            <label for="bookFormISBN">ISBN</label>
+            <input id="bookFormISBN" type="text" required data-testid="bookFormISBNInput" />
+          </div>
+          <div>
+            <label for="bookFormIsComplete">Selesai dibaca</label>
+            <input
+              id="bookFormIsComplete"
+              type="checkbox"
+              data-testid="bookFormIsCompleteCheckbox"
+            />
+          </div>
+          <button id="bookFormSubmit" type="submit" data-testid="bookFormSubmitButton">
+            Masukkan Buku ke Rak
+          </button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Cari Buku</h2>
+        <form id="searchBook" data-testid="searchBookForm">
+          <label for="searchBookTitle">Judul</label>
+          <input id="searchBookTitle" type="text" data-testid="searchBookFormTitleInput" />
+          <button id="searchSubmit" type="submit" data-testid="searchBookFormSubmitButton">
+            Cari
+          </button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Belum selesai dibaca</h2>
+
+        <div id="incompleteBookList" data-testid="incompleteBookList">
+          <!-- 
+            Ini adalah struktur HTML untuk masing-masing buku.
+            Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
+          -->
+          <div data-bookid="2500001" data-testid="bookItem">
+            <h3 data-testid="bookItemTitle">Anak Semua Bangsa</h3>
+            <p data-testid="bookItemAuthor">Penulis: Pramoedya Ananta Toer</p>
+            <p data-testid="bookItemYear">Tahun: 2025</p>
+            <p data-testid="bookItemPublisher">Penerbit: Lentera Dipantara</p>
+            <p data-testid="bookItemISBN">ISBN: 978-602-03-2478-4</p>
+            <div>
+              <button data-testid="bookItemIsCompleteButton">Selesai dibaca</button>
+              <button data-testid="bookItemDeleteButton">Hapus Buku</button>
+              <button data-testid="bookItemEditButton">Edit Buku</button>
+            </div>
+          </div>
+          <div data-bookid="2500002" data-testid="bookItem">
+            <h3 data-testid="bookItemTitle">Supernova 1: Ksatria, Puteri dan Bintang Jatuh</h3>
+            <p data-testid="bookItemAuthor">Penulis: Dee Lestari</p>
+            <p data-testid="bookItemYear">Tahun: 2025</p>
+            <p data-testid="bookItemPublisher">Penerbit: Bentang Pustaka</p>
+            <p data-testid="bookItemISBN">ISBN: 978-623-186-484-0</p>
+            <div>
+              <button data-testid="bookItemIsCompleteButton">Selesai dibaca</button>
+              <button data-testid="bookItemDeleteButton">Hapus Buku</button>
+              <button data-testid="bookItemEditButton">Edit Buku</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Selesai dibaca</h2>
+
+        <div id="completeBookList" data-testid="completeBookList">
+          <!-- 
+            Ini adalah struktur HTML untuk masing-masing buku.
+            Pastikan susunan elemen beserta atribut data-testid menyesuaikan seperti contoh ini.
+          -->
+          <div data-bookid="2500003" data-testid="bookItem">
+            <h3 data-testid="bookItemTitle">Hujan</h3>
+            <p data-testid="bookItemAuthor">Penulis: Tere Liye</p>
+            <p data-testid="bookItemYear">Tahun: 2018</p>
+            <p data-testid="bookItemPublisher">Penerbit: Gramedia Pustaka Utama</p>
+            <p data-testid="bookItemISBN">ISBN: 978-602-03-2478-4</p>
+            <div>
+              <button data-testid="bookItemIsCompleteButton">Selesai dibaca</button>
+              <button data-testid="bookItemDeleteButton">Hapus Buku</button>
+              <button data-testid="bookItemEditButton">Edit Buku</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
